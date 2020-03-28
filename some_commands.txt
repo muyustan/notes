@@ -59,5 +59,6 @@ Path=/home/muyustan/altera/13.1
     git push -u <repo_shortcut_name> <branch_name>
     # generaly use origin as shortcut name and branch is master.
     git push --force
+    git remote -v / display remote links
     
 
