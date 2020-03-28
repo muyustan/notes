@@ -1,0 +1,18 @@
+muyustan@muyustan-ubuntu:~/Desktop$ ls | grep '\.txt$' | wc -l # here backslash is used to suppress special character '.'
+2
+muyustan@muyustan-ubuntu:~/Desktop$ ls | grep .txt | wc -l
+2
+
+# wc -l counts the lines printed I guess.
+
+muyustan@muyustan-ubuntu:~/Desktop$ find ./ -name "*.txt"
+./pynotes.txt
+./input01.txt
+./linuxNotes.txt
+./Term Project-20200302/Input_file_READ_ME.txt
+muyustan@muyustan-ubuntu:~/Desktop$ find ./ -name "*.txt" | wc -l
+4
+
+ls -R is the equivalent of tree in windows.
+
+ls *.txt is nicely working.
