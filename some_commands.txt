@@ -1,0 +1,63 @@
+1- type -a <command/alias/etc>
+2- gcc <xxx.c> -o <executable_name>
+3- python3.7 -m venv /path/to/venv
+    source /xxx/venv/bin/activate
+    deactivate
+4- alias de=deactivate
+    to make it permanent, go to /.bashrc
+    # Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+5-     muyustan@muyustan-ubuntu:~/Desktop$ ls | grep '\.txt$' | wc -l # here backslash is   used    to suppress special character '.'
+2
+muyustan@muyustan-ubuntu:~/Desktop$ ls | grep .txt | wc -l
+2
+
+# wc -l counts the lines printed I guess.
+
+muyustan@muyustan-ubuntu:~/Desktop$ find ./ -name "*.txt"
+./pynotes.txt
+./input01.txt
+./linuxNotes.txt
+./Term Project-20200302/Input_file_READ_ME.txt
+muyustan@muyustan-ubuntu:~/Desktop$ find ./ -name "*.txt" | wc -l
+4
+
+ls -R is the equivalent of tree in windows.
+
+ls *.txt is nicely working.
+
+6- QUARTUS:
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=Quartus II 13.1 (64-bit) Web Edition
+Comment=Quartus II 13.1 (64-bit)
+Icon=/home/muyustan/altera/13.1/quartus/adm/quartusii.png
+Exec=/home/muyustan/altera/13.1/quartus/bin/quartus --64bit
+Terminal=false
+Path=/home/muyustan/altera/13.1
+
+# tb2_install: error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory
+# quartus: error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory
+
+7- git init
+    git config --global user.name <username>
+    git config --global user.email <email>
+    git status
+    git add <filename>
+    git rm --cached <filename>
+    git add . →  adds all files to the staging area
+    git commit -m “commit_message”
+    git log
+    git log --oneline
+    git reset <commit_ID> --hard → hard reset to a previous version, ID is found from git log --oneline
+    git reset <commit ID> --soft → soft return
+    git commit --amend -m “new_message_to_overwrite_old_one”
+    git commit --amend → add new items on the staging area to the previous commit
+    git remote add <repo_shortcut_name> <repo_link>
+    git push -u <repo_shortcut_name> <branch_name>
+    # generaly use origin as shortcut name and branch is master.
+    git push --force
+    
+
