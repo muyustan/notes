@@ -1,0 +1,79 @@
+> I have been dealing with this issue for a long(well, *very* long)
+> time. I've searched almost every source but things were not getting in
+> a pattern in my head.
+> 
+> Finally, I think I have figured out exact steps to follow, I wanted to
+> share.
+> 
+> *Note that, my answer uses informations on the answers of others on this question.*
+
+# How to create a standalone executable of a python project. #
+
+Assume, we have a project_folder and the file tree is as follows:
+
+>     project_folder
+>         main.py
+>         xxx.py # modules
+>         xxx.py # modules
+>         sound/ # directory containing the sound files
+>         img/ # directory containing the image files
+>         venv/ # if using a venv
+
+
+First of all, let's say you have defined your paths to `sound/` and `img/` folders into variables `sound_dir` and `img_dir` as follows:
+
+    img_dir = os.path.join(os.path.dirname(__file__), "img")
+    sound_dir = os.path.join(os.path.dirname(__file__), "sound")
+
+You have to change them, as follows:
+
+    img_dir = resource_path("img")
+    sound_dir = resource_path("sound")
+
+Where, `resource_path()` is defined in the top of your script as:
+
+    def resource_path(relative_path):
+        """ Get absolute path to resource, works for dev and for PyInstaller """
+        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+        return os.path.join(base_path, relative_path)
+
+Activate virtual env if using a venv,
+
+Install pyinstaller if you didn't yet, by: `pip3 install pyinstaller`.
+
+Run: `pyi-makespec --onefile main.py` to create the spec file for the compile and build process.
+
+This will change file hierarchy to:
+
+>     project_folder
+>         main.py
+>         xxx.py # modules
+>         xxx.py # modules
+>         sound/ # directory containing the sound files
+>         img/ # directory containing the image files
+>         venv/ # if using a venv
+>         main.spec
+
+
+Open(with an edior) `main.spec`:
+
+At top of it, insert:
+
+    added_files = [
+    
+    ("sound", "sound"),
+    ("img", "img")
+    
+    ]
+    
+
+Then, change the line of `datas=[],` to `datas=added_files,`
+
+For the details of the operations done on `main.spec` see [here.][1]
+
+Run `pyinstaller --onefile main.spec`
+
+And that is all, you can run `main` in `project_folder/dist` from anywhere, without having anything else in its folder. You can distribute only that `main` file. It is now, a true **standalone**.
+
+
+  [1]: https://pyinstaller.readthedocs.io/en/stable/spec-files.html
