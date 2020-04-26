@@ -16,3 +16,5 @@ muyustan@muyustan-ubuntu:~/Desktop$ find ./ -name "*.txt" | wc -l
 ls -R is the equivalent of tree in windows.
 
 ls *.txt is nicely working.
+
+alt+f2 (run command) and type 'r' to reset gnome desktop

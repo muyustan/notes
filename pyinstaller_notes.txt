@@ -1,4 +1,0 @@
-First change all "__file__" variables with "sys.executable"
-Then, run:
-pyinstaller <python_file.py> --onefile
-Then, copy all your directories(sound, img, etc.) to dist/ folder.
