@@ -1,3 +1,13 @@
+
+UBUNTU 20.04
+
+I have followed this and installed java from Oracle.
+Then it worked when I changed the default java version.
+
+https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu/
+
+------------------------------------------
+
 Here is the procedure to get CubeProgrammer working with ubuntu18.04
  
 1- Install OpenJDK 8 :
@@ -17,10 +27,3 @@ Here is the procedure to get CubeProgrammer working with ubuntu18.04
 => sudo apt-mark hold openjfx libopenjfx-jni libopenjfx-java
 
 --------------------------------------------
-
-UBUNTU 20.04
-
-I have followed this and installed java from Oracle.
-Then it worked when I changed the default java version.
-
-https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu/
