@@ -1,1 +1,3 @@
 screen /dev/ttyUSB0 -U 9600
+
+exit with CTRL+a k y
