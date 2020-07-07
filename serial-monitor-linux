@@ -9,6 +9,8 @@ exit with CTRL+a k y
 --------------
 Please ensure you have set the ttyUSBx port in raw mode. Otherwise there can be some character replacements e.g. \r with \n and vice versa on receiver side.
 For anyone from an internet search, to do this, just add raw in the settings. e.g. 
-stty -F /dev/USB0 115200 raw
+stty -F /dev/ttyUSB0 115200 raw
 
 -----------
+
+Send data from unix terminal via echo -en "A" > /dev/ttyUSB0
