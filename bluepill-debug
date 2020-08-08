@@ -11,3 +11,5 @@ reset_config none separate
 Then the reset is done internally over the SWD channel with no pins used.
 
 ----------------------
+
+/opt/st/stm32cubeide_1.3.0/plugins/com.st.stm32cube.ide.mcu.debug.openocd_1.3.0.202002181050/resources/openocd/st_scripts/target/stm32f1x.cfg
