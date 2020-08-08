@@ -1,3 +1,13 @@
 stm32f103 blue pill openocd stm32cube ide debug
 
 https://github.com/vsergeev/arm-bmw-sw/issues/1
+
+Based on the comment from @FarisAlsaad , the following worked for me and will hopefully work for other GUI users -- without the need to switch to 'user defined' configuration script.
+Go to Debug Configurations -> Debugger tab -> Configuration Script -> Show generation options... -> Reset Mode ==> change to 'Software System Reset'.
+
+seems the simplest way to deal with this is to just use
+
+reset_config none separate
+Then the reset is done internally over the SWD channel with no pins used.
+
+----------------------
